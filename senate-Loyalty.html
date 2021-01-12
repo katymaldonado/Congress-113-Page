@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="widht=device-width, initial-scale=1.0">
+        <title>Senate PL TGIF</title>    
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+   
+   
+    </head>
+    
+    <body id="senate">
+      <div id="app">
+         <div class="container lead">
+             <div class="row">
+                 <div class="d-flex col-sm-12 col-md-12 ">
+                     <div class="p-2 d-flex align-items-end">
+                         <nav class="navbar-light d-inline-block align-bottom">
+                             <a class="navbar-brand" href="home.html">
+                                 <img src="img/LOGO1.jpg" width="60" height="60" class="d-inline-block align-bottom" alt="logo" loading="lazy">
+                                 <h1 class="d-inline-block mb-0 mt-4 text-info display-4 font-weight-normal">TGIF</h1>
+                             </a>
+                         </nav>
+                     </div>
+       
+                     <div class="ml-auto p-2 d-flex align-items-center">
+                         <p class="mb-0 mt-5 text-info"><a href="mailto:info@tgif.net"><svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-envelope-fill d-inline-block text-info mr-1" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                         <path fill-rule="evenodd" d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414.05 3.555zM0 4.697v7.104l5.803-3.558L0 4.697zM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586l-1.239-.757zm3.436-.586L16 11.801V4.697l-5.803 3.546z"/>
+                          </svg>info@tgif.net</a></p>    
+                     </div>
+                 </div>
+             </div>
+                 
+             <div class="row">
+                 <div class="col-sm-12 d-flex-inline col-md-12">
+                     <nav class="navbar navbar-expand-lg navbar-light bg-light border border-secondary">
+                         <div class="d-flex flex-row" id="navbarNavDropdown">
+                             <ul class="navbar-nav">
+                                  <li class="nav-item">
+                                      <a class="nav-link text-info" href="home.html">Home <span class="sr-only">(current)</span></a>
+                                  </li>
+                  
+                                  <li class="nav-item">
+                                     <li class="nav-item dropdown">
+                                         <a class="nav-link dropdown-toggle text-info" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                              Congress 113
+                                         </a>
+                
+                                         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                             <a class="dropdown-item bg-light text-info" href="house.html">House</a>
+                                             <a class="dropdown-item bg-light text-info" href="senate.html">Senate</a>
+                                         </div>
+                                     </li>
+                                  </li>
+        
+                                  <li class="nav-item">
+                                      <li class="nav-item dropdown">
+                                          <a class="nav-link dropdown-toggle text-info" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                              Attendance
+                                          </a>
+                
+                                          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                              <a class="dropdown-item bg-light text-info" href="house-Attendance.html">House</a>
+                                              <a class="dropdown-item bg-light text-info" href="senate-Attendance.html">Senate</a>
+                                          </div>
+                                      </li>
+                                  </li>
+       
+                                  <li class="nav-item">
+                                      <li class="nav-item dropdown">
+                                          <a class="nav-link dropdown-toggle text-info" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                              Party Loyalty
+                                          </a>
+                
+                                          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                              <a class="dropdown-item bg-light text-info" href="house-Loyalty.html">House</a>
+                                              <a class="dropdown-item bg-light " href="#">Senate</a>
+                                          </div>
+                                      </li>
+                                  </li>
+                             </ul>
+                         </div>
+                     </nav>
+                 </div>
+              </div>
+       
+              <main id="loyalty">
+                 <div class="row pt-5 mt-2 pb-3">
+                     <div  class="col-sm-12 col-md-6">
+                         <h2>Party Loyalty</h2>
+                         <p>Those who consider themselves to be strong partisans, strong Democrats and strong Republicans 
+                             respectively, tend to be the most faithful in voting for their party's nominee for office and 
+                             legislation that backs their party's agenda. </p>
+                     </div>
+                 
+                     <div class="col-sm-12 col-md-6">
+                          <h2 class="pt-3 text-right">Senate at a glance</h2>
+                          <table id="table1" class="table table-bordered text-center">
+                              <thead>
+                                  <tr>
+                                      <th  scope="col">Party</th>
+                                      <th  scope="col">Number of Reps</th>
+                                      <th  scope="col">% Voted with Prty</th>
+                                 </tr>
+                              </thead>
+
+                              <tbody>
+                                <tr>
+                                    <td>Democrats</td>
+                                    <td>{{stats.dem.length}}</td>
+                                    <td>{{averagePartyVotes(stats.dem,"votes_with_party_pct")}} &percnt;</td>
+                                </tr>
+                                <tr>
+                                    <td>Republicans</td>
+                                    <td>{{stats.rep.length}}</td>
+                                    <td>{{averagePartyVotes(stats.rep,"votes_with_party_pct")}} &percnt;</td>
+                                </tr>
+                                <tr>
+                                    <td>Independents</td>
+                                    <td>{{stats.ind.length}}</td>
+                                    <td>{{averagePartyVotes(stats.ind,"votes_with_party_pct")}} &percnt;</td>
+                                </tr>
+                              </tbody>
+                          </table>
+                     </div>
+                 </div>
+
+                 <hr>
+
+                 <div class="pt-3">
+                     <div class="row">
+                         <div class="col-sm-12 col-md-6">
+                             <h2>Least Loyal (Bottom 10% of Party)</h2>
+                             <table id="least" class="table table-bordered text-center mb-5">
+                                 <thead>
+                                     <tr>
+                                         <th scope="col">Name</th>
+                                         <th  scope="col">Number Party Votes</th>
+                                         <th  scope="col">% Party Votes</th>
+                                     </tr>
+                                 </thead>
+                                 
+                                 <tbody>
+                                    <tr v-for="member in loyleast">
+                                        <td><a href="member.url">{{member.first_name}} {{member.middle_name || ''}} {{member.last_name}}</a></td>
+                                        <td>{{((member.total_votes * member.votes_with_party_pct)/ 100)}}</td>
+                                        <td>{{member.votes_with_party_pct}} &percnt;</td>
+                                   </tr>
+                                 </tbody>
+                             </table>
+                         </div>
+                    
+                         <div class="col-sm-12 col-md-6">
+                              <h2>Most Loyal (Top 10% of Party)</h2>
+                              <table id="most" class="table table-bordered text-center mb-5">
+                                 <thead>
+                                     <tr>
+                                         <th  scope="col">Name</th>
+                                         <th  scope="col">Number Party Votes</th>
+                                         <th  scope="col">% Party Votes</th>
+                                     </tr>
+                                 </thead>
+                                  
+                                 <tbody>
+                                     <tr v-for="member in loymost">
+                                          <td><a href="member.url">{{member.first_name}} {{member.middle_name || ''}} {{member.last_name}}</a></td>
+                                          <td>{{((member.total_votes * member.votes_with_party_pct)/ 100)}}</td>
+                                          <td>{{member.votes_with_party_pct}} &percnt;</td>
+                                     </tr>
+                                 </tbody>
+                             </table>
+                         </div>
+                     </div>
+                  </div>
+             </main>
+           
+             <div class="row">
+                 <div class="col-sm-12 col-md-12">
+                     <footer class="p-2 bg-light text-center border border-secondary">
+                         <p>&#169 2016 TGIF |  All Rights Reserve</p>
+                     </footer> 
+                 </div>
+               </div>
+          </div>
+      </div>
+        
+      <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>     
+      
+       <script src="JS/main.js"></script>
+</body>
+</html>
+
+
+
